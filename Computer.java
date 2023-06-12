@@ -14,7 +14,7 @@ public class Computer extends Spieler {
     * Der Computer beginnt. Der Computer würfelt nach seiner vorprogrammierten Taktik so
     * lange, bis eines der folgenden Bedingungen erfüllt ist:
     * - Der Spieler kann nicht weiter speilen.
-    * - Der Spieler hat eine verhältnismäßig hohe Punktzahl ( > 15 Punkte / Wurf)
+    * - Der Spieler hat eine verhältnismäßig hohe Punktzahl ( > 8 Punkte / Wurf)
     */
   public void spielBeginnen() {
     boolean weiterspielen = true;
@@ -23,7 +23,7 @@ public class Computer extends Spieler {
       weiterspielen = false;
       if (super.getKannSpielen()) { // Nur wenn wir Würfeln können würfeln wir.
         double punkteSchnitt = ((double) super.punktestandAngeben()) / super.wurfAnzahlAngeben();
-        if (punkteSchnitt <= 14) {
+        if (punkteSchnitt <= 8) {
           // Wenn wir nicht eine hohe Punktzahl haben, sollte man noch einmal Würfeln.
           weiterspielen = true;
         }

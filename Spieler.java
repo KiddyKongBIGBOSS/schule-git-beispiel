@@ -35,7 +35,7 @@ public class Spieler {
   /**
    * Die Punktzahl des Spielers in diesem Moment.
    * Die Punktzahl ist die Summe aller Augenzahlen, die in der aktiven
-   * Runde getätigt wurden, abzüglich der 11 - sollte diese bereits gewürfelt worden sein.
+   * Runde getätigt wurden, abzüglich der 7 - sollte diese bereits gewürfelt worden sein.
    */
   private int punkte;
   
@@ -124,8 +124,8 @@ public class Spieler {
       wuerfel1.rollen();
       wuerfel2.rollen();
       int inkrement = wuerfel1.punktzahlAngeben() + wuerfel2.punktzahlAngeben();
-      if (inkrement == 11) { // Aufgabe 4: Verflixte 11
-        inkrement = -11; // Aufgabe 4: Verflixte 11
+      if (inkrement == 7) {
+        inkrement = -7;
         this.kannSpielen = false;
       }
       this.punkte = this.punktestandAngeben() + inkrement;
