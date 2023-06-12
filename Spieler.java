@@ -49,6 +49,13 @@ public class Spieler
     * Die Anzahl der Würfe, die der Spieler getätigt hat.
     */
    private int wurfAnzahl;
+  
+   /**
+     * Gibt an, ob der Spieler würfeln kann.
+     * Der Spieler wird nicht mehr Würfelfähig, sobald
+     * dieser eine 7 gewürfelt hat. 
+     */
+   private boolean kannSpielen;
 
    /**
     * Konstruktor fuer Objekte der Klasse Spieler
@@ -60,6 +67,7 @@ public class Spieler
         this.wuerfel2 = pWuerfel2;
         this.topf = pTopf;
         this.vermoegen = 1000;
+        this.kannSpielen = true;
     }
 
    /**
@@ -81,6 +89,7 @@ public class Spieler
         this.vermoegen = this.vermoegen + this.topf.einsatzAbgeben();
         this.punkte = 0;
         this.wurfAnzahl = 0;
+        this.kannSpielen = true;
    }
 
    /**
@@ -112,21 +121,26 @@ public class Spieler
     * Die Wurfzahl wird um genau 1 erhöht.
     *
     * Sollte die kombinierte Augenzahl genau 7 sein wird anstatt einer addition
-    * eine subtraktion ausgeführt. 
+    * eine subtraktion ausgeführt.
+    *
+    * Diese Methode tut nichts, wenn der Spieler nicht würfelfähig ist. 
     */
    public void wuerfeln ()
    {
+      if (this.kannSpielen) {
          wuerfel1.rollen();
          wuerfel2.rollen();
          int inkrement = wuerfel1.punktzahlAngeben() + wuerfel2.punktzahlAngeben();
          if (inkrement == 7) {
            inkrement = -7;
+           this.kannSpielen = false;
          }
 
          this.punkte = this.punktestandAngeben() + inkrement;
          this.wurfAnzahl++;
-    }
- 
+      }
+   }
+
    /**
     * Legt den Namen des Spielers neu fest.
     */

@@ -41,7 +41,9 @@ public class Wuerfel
    private int zufallsZahlAusgeben(int maximum)
    { 
       int wert=0;
-      wert =(int)Math.round(Math.random()*(maximum-1))+1;
+      // Anstatt wert = (int) Math.round(Math.random()*(maximum-1)) + 1;
+      // Die variante mit Math#round führt dazu, dass 1 und 6 halb so wahrscheinlich wie alle anderen Zahlen sind. So funktioniert aber kein Würfel.
+      wert =(int)Math.floor(Math.random()*maximum)+1;
       return wert;
    }
 
