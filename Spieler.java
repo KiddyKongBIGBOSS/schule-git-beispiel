@@ -131,8 +131,8 @@ public class Spieler
          wuerfel1.rollen();
          wuerfel2.rollen();
          int inkrement = wuerfel1.punktzahlAngeben() + wuerfel2.punktzahlAngeben();
-         if (inkrement == 7) {
-           inkrement = -7;
+         if (inkrement == 11) {
+           inkrement = -11;
            this.kannSpielen = false;
          }
 
