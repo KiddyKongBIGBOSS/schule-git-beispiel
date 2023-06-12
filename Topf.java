@@ -34,7 +34,7 @@ public class Topf
    }
 
    /**
-    * nimmt den einsatz auf
+    * Nimmt den einsatz auf
     */
    public void einsatzAufnehmen (int einsatz)
    {
