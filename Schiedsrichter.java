@@ -29,9 +29,10 @@ public class Schiedsrichter {
    * Diese Methode erwartet, dass keine weitere Runde bereits im Gange ist
    * und setzt wie Wurfzahl und die Punktezahl des Spielers nicht zurück.
    */
+  /* Auskommentiert: Da der Schiedsrichter (noch) nicht den Spielfluss definiert, ist die Sinnhaftigkeit dieser Methode fragwürdig.
   public void starteSpiel() {
     // TODO implement
-  }
+  }*/
   
   /**
    * Gibt den Spieler zurück, der gewonnen hat.
