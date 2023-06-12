@@ -35,7 +35,7 @@ public class Spieler
    /**
      * Die Punktzahl des Spielers in diesem Moment.
      * Die Punktzahl ist die Summe aller Augenzahlen, die in der aktiven
-     * Runde getätigt wurden, abzüglich der 7 - sollte diese gewürfelt worden sein.
+     * Runde getätigt wurden, abzüglich der 11 - sollte diese bereits gewürfelt worden sein.
      */
    private int punkte;
   
@@ -120,8 +120,8 @@ public class Spieler
     * zu der Punktanzahl des Spielers hinzu.
     * Die Wurfzahl wird um genau 1 erhöht.
     *
-    * Sollte die kombinierte Augenzahl genau 7 sein wird anstatt einer addition
-    * eine subtraktion ausgeführt.
+    * Sollte die kombinierte Augenzahl genau 11 betragen wird anstatt einer Addition
+    * eine Subtraktion ausgeführt.
     *
     * Diese Methode tut nichts, wenn der Spieler nicht würfelfähig ist. 
     */
@@ -147,6 +147,17 @@ public class Spieler
    public void setName (String neuerName)
    {
          this.name = neuerName;
+   }
+  
+   /**
+    * Setzt die Attribute, die innerhalb einer Runde sich ändern können,
+    * zurück. Wird benötigt, um einen fairen Spielfluss in der nächsten
+    * Runde zu gewährleisten. 
+    */
+   public void zuruecksetzten() {
+      this.punkte = 0;
+      this.wurfAnzahl = 0;
+      this.kannSpielen = true;
    }
 }
 
